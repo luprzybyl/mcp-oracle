@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-oracle"
+version = "0.1.0"
+description = "MCP server exposing an Oracle database over stdio (query, execute, PL/SQL, schema introspection)"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "oracledb>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Intended Audience :: Developers",
+    "Environment :: Console",
+    "Topic :: Database",
+]
+
+[project.scripts]
+mcp-oracle = "server:main"
+
+[tool.setuptools]
+py-modules = ["server"]
